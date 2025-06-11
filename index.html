@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delizia - Elegant Dining</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Poppins', 'Inter', sans-serif; }
+        input[type="date"], input[type="time"] { min-height: 40px; }
+
+        /* Optional custom scrollbar for WebKit/Blink */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fdfbf7; /* A light beige, similar to beige-50 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8c6d62; /* A terracotta/brown color */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #795548; /* Darker brown on hover */
+        }
+    </style>
+</head>
+<body class="bg-beige-50 text-brown-700 font-sans">
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="text-2xl font-bold text-brown-700">
+                Delizia
+            </div>
+            <div class="hidden md:flex space-x-4" id="desktop-menu">
+                <a href="#home" class="px-4 py-2 text-brown-600 hover:text-olive-500">Home</a>
+                <a href="#about" class="px-4 py-2 text-brown-600 hover:text-olive-500">About</a>
+                <a href="#menu" class="px-4 py-2 text-brown-600 hover:text-olive-500">Menu</a>
+                <a href="#reviews" class="px-4 py-2 text-brown-600 hover:text-olive-500">Reviews</a>
+                <a href="#contact" class="px-4 py-2 text-brown-600 hover:text-olive-500">Contact</a>
+            </div>
+            <div class="flex items-center">
+                 <a href="#booking-form" class="bg-olive-500 hover:bg-olive-600 text-white font-semibold py-2 px-4 rounded-lg shadow hidden md:inline-block">Book Table</a>
+                 <button id="mobile-menu-button" class="md:hidden ml-4 text-brown-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile menu, hidden by default -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-3 space-y-1">
+            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium text-brown-600 hover:bg-beige-100 hover:text-olive-500">Home</a>
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-brown-600 hover:bg-beige-100 hover:text-olive-500">About</a>
+            <a href="#menu" class="block px-3 py-2 rounded-md text-base font-medium text-brown-600 hover:bg-beige-100 hover:text-olive-500">Menu</a>
+            <a href="#reviews" class="block px-3 py-2 rounded-md text-base font-medium text-brown-600 hover:bg-beige-100 hover:text-olive-500">Reviews</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-brown-600 hover:bg-beige-100 hover:text-olive-500">Contact</a>
+            <a href="#booking-form" class="block w-full text-left mt-2 px-3 py-2 rounded-md text-base font-medium text-white bg-olive-500 hover:bg-olive-600">Book Table</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 bg-cover bg-center" style="background-image: url('https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');">
+            <div class="absolute inset-0 bg-black bg-opacity-50"></div> <!-- Overlay -->
+            <div class="relative z-10"> <!-- Content container -->
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">Welcome to Delizia</h1>
+                <p class="text-xl md:text-2xl text-beige-100 mb-8">Elegant dining experience with fresh, high-quality ingredients.</p>
+                <a href="#booking-form" class="bg-olive-500 hover:bg-olive-600 text-white font-semibold py-3 px-8 rounded-lg shadow-lg text-lg transform hover:scale-105 transition-transform duration-300">Book Your Table</a>
+            </div>
+        </section>
+
+        <!-- Placeholder for About Section (next step) -->
+        <section id="about" class="py-16 md:py-24 bg-beige-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-brown-700 text-center mb-12 md:mb-16">About Us</h2>
+                <div class="md:grid md:grid-cols-2 md:gap-12 lg:gap-16 items-center">
+                    <div class="mb-10 md:mb-0">
+                        <p class="text-brown-600 text-lg leading-relaxed mb-6">
+                            Welcome to Delizia, where culinary craftsmanship meets a warm and inviting atmosphere. Our chefs are dedicated to sourcing the freshest local ingredients to create dishes that tantalize your taste buds and leave a lasting impression. We believe in the art of fine dining, made accessible and enjoyable for everyone.
+                        </p>
+                        <p class="text-brown-600 text-lg leading-relaxed mb-8">
+                            Our philosophy revolves around simplicity and elegance, both in our cuisine and our service. Join us for an unforgettable meal that celebrates the best of seasonal produce and innovative cooking.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-start text-brown-600">
+                                <svg class="w-6 h-6 mr-3 text-olive-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a7 7 0 00-7 7c0 5.25 7 11 7 11s7-5.75 7-11a7 7 0 00-7-7zm0 9a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+                                <span>123 Gourmet Street, Foodie City, FC 54321</span>
+                            </div>
+                            <div class="flex items-start text-brown-600">
+                                <svg class="w-6 h-6 mr-3 text-olive-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                                <span>(123) 456-7890</span>
+                            </div>
+                            <div class="flex items-start text-brown-600">
+                                <svg class="w-6 h-6 mr-3 text-olive-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                                <span>Mon - Sat: 11:00 AM - 10:00 PM <br class="sm:hidden"> Sun: Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 md:mt-0">
+                        <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Interior of Delizia restaurant" class="rounded-lg shadow-xl w-full h-auto object-cover md:max-h-[500px] aspect-square md:aspect-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placeholder for Menu Section (next step) -->
+        <section id="menu" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-brown-700 text-center mb-12 md:mb-16">Our Exquisite Menu</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                    <!-- Menu Item 1 -->
+                    <div class="bg-beige-50 rounded-lg shadow-lg overflow-hidden transform hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
+                        <img src="https://images.pexels.com/photos/1600727/pexels-photo-1600727.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="Spaghetti Carbonara" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-brown-700 mb-2">Spaghetti Carbonara</h3>
+                            <p class="text-brown-600 mb-4 text-sm leading-relaxed">A classic Roman pasta dish with creamy egg sauce, Pecorino Romano, pancetta, and black pepper.</p>
+                            <p class="text-xl font-bold text-olive-600">$22.50</p>
+                        </div>
+                    </div>
+                    <!-- Menu Item 2 -->
+                    <div class="bg-beige-50 rounded-lg shadow-lg overflow-hidden transform hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
+                        <img src="https://images.pexels.com/photos/704569/pexels-photo-704569.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="Grilled Salmon" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-brown-700 mb-2">Grilled Salmon</h3>
+                            <p class="text-brown-600 mb-4 text-sm leading-relaxed">Fresh Atlantic salmon fillet, grilled to perfection, served with roasted asparagus and lemon-dill sauce.</p>
+                            <p class="text-xl font-bold text-olive-600">$28.00</p>
+                        </div>
+                    </div>
+                    <!-- Menu Item 3 -->
+                    <div class="bg-beige-50 rounded-lg shadow-lg overflow-hidden transform hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
+                        <img src="https://images.pexels.com/photos/376464/pexels-photo-376464.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="Berry Pancakes" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-brown-700 mb-2">Berry Pancakes</h3>
+                            <p class="text-brown-600 mb-4 text-sm leading-relaxed">Fluffy buttermilk pancakes topped with a mix of fresh berries, maple syrup, and a dusting of powdered sugar.</p>
+                            <p class="text-xl font-bold text-olive-600">$16.75</p>
+                        </div>
+                    </div>
+                     <!-- Menu Item 4 (Example) -->
+                    <div class="bg-beige-50 rounded-lg shadow-lg overflow-hidden transform hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
+                        <img src="https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&dpr=1" alt="Mushroom Risotto" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-brown-700 mb-2">Mushroom Risotto</h3>
+                            <p class="text-brown-600 mb-4 text-sm leading-relaxed">Creamy Arborio rice cooked with wild mushrooms, Parmesan cheese, white wine, and a touch of truffle oil.</p>
+                            <p class="text-xl font-bold text-olive-600">$24.00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placeholder for Reviews Section (next step) -->
+        <section id="reviews" class="py-16 md:py-24 bg-beige-100">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-brown-700 text-center mb-12 md:mb-16">What Our Customers Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+                    <!-- Review 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Alice Wonderland" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-olive-200 shadow-md">
+                        <h3 class="text-xl font-semibold text-brown-700 mb-1">Alice Wonderland</h3>
+                        <div class="flex justify-center mb-3 text-yellow-400">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                        </div>
+                        <p class="text-brown-600 text-sm leading-relaxed italic">"Absolutely loved the ambiance and the food was exquisite! The carbonara was the best I've ever had. Highly recommend!"</p>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Bob The Builder" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-olive-200 shadow-md">
+                        <h3 class="text-xl font-semibold text-brown-700 mb-1">Bob The Builder</h3>
+                        <div class="flex justify-center mb-3 text-yellow-400">
+                           <!-- 4 Stars -->
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                        </div>
+                        <p class="text-brown-600 text-sm leading-relaxed italic">"Great service and delicious food. The grilled salmon was cooked perfectly. Only downside was it was a bit noisy."</p>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center transform hover:scale-105 transition-transform duration-300 ease-in-out">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Carol Danvers" class="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-olive-200 shadow-md">
+                        <h3 class="text-xl font-semibold text-brown-700 mb-1">Carol Danvers</h3>
+                        <div class="flex justify-center mb-3 text-yellow-400">
+                            <!-- 5 Stars -->
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.957a1 1 0 00.95.69h4.162c.969 0 1.371 1.24.588 1.81l-3.368 2.448a1 1 0 00-.364 1.118l1.287 3.957c.3.921-.755 1.688-1.54 1.118l-3.368-2.448a1 1 0 00-1.175 0l-3.368 2.448c-.784.57-1.838-.197-1.539-1.118l1.287-3.957a1 1 0 00-.364-1.118L2.204 9.384c-.783-.57-.38-1.81.588-1.81h4.162a1 1 0 00.95-.69L9.049 2.927z"></path></svg>
+                        </div>
+                        <p class="text-brown-600 text-sm leading-relaxed italic">"A hidden gem! The staff were incredibly friendly and the pancakes were to die for. Will definitely be back soon!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Placeholder for Booking Form Section (next step) -->
+        <section id="booking-form" class="py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-brown-700 text-center mb-12 md:mb-16">Book Your Table</h2>
+                <form class="max-w-2xl mx-auto bg-beige-50 p-8 md:p-10 rounded-xl shadow-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                        <div class="md:col-span-2">
+                            <label for="name" class="block text-brown-700 text-sm font-semibold mb-2">Full Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 text-brown-700 bg-white border border-beige-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-colors" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-brown-700 text-sm font-semibold mb-2">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 text-brown-700 bg-white border border-beige-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-colors" placeholder="(123) 456-7890">
+                        </div>
+                        <div>
+                            <label for="guests" class="block text-brown-700 text-sm font-semibold mb-2">Number of Guests</label>
+                            <input type="number" id="guests" name="guests" min="1" required class="w-full px-4 py-3 text-brown-700 bg-white border border-beige-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-colors" placeholder="2">
+                        </div>
+                        <div>
+                            <label for="date" class="block text-brown-700 text-sm font-semibold mb-2">Date</label>
+                            <input type="date" id="date" name="date" required class="w-full px-4 py-3 text-brown-700 bg-white border border-beige-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-colors" min="2024-01-01">
+                        </div>
+                        <div>
+                            <label for="time" class="block text-brown-700 text-sm font-semibold mb-2">Time</label>
+                            <input type="time" id="time" name="time" required class="w-full px-4 py-3 text-brown-700 bg-white border border-beige-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-colors">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="comments" class="block text-brown-700 text-sm font-semibold mb-2">Special Requests / Comments</label>
+                            <textarea id="comments" name="comments" rows="4" class="w-full px-4 py-3 text-brown-700 bg-white border border-beige-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent transition-colors" placeholder="e.g. dietary restrictions, special occasion"></textarea>
+                        </div>
+                        <div class="md:col-span-2">
+                            <button type="submit" class="w-full bg-olive-500 hover:bg-olive-600 text-white font-bold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ease-in-out text-lg mt-4">Request Booking</button>
+                        </div>
+                    </div>
+                    <p class="text-center text-brown-600 text-xs italic mt-6">This is a demo form for frontend demonstration. No actual bookings will be made.</p>
+                </form>
+            </div>
+        </section>
+
+        <!-- Placeholder for Footer (next step) -->
+    </main>
+
+    <footer id="contact" class="bg-brown-800 text-beige-200 py-12 md:py-16">
+        <div class="container mx-auto px-6">
+            <!-- Top Info Grid: Logo, Links, Contact, Social -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 mb-12">
+                <!-- Column 1: Delizia Info -->
+                <div>
+                    <h3 class="text-3xl font-bold text-white mb-3">Delizia</h3>
+                    <p class="text-sm text-beige-300 leading-relaxed mb-4">
+                        Elegant dining experience with fresh, high-quality ingredients. Join us for an unforgettable meal.
+                    </p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-xl font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-sm text-beige-300 hover:text-olive-300 transition-colors duration-200">Home</a></li>
+                        <li><a href="#about" class="text-sm text-beige-300 hover:text-olive-300 transition-colors duration-200">About Us</a></li>
+                        <li><a href="#menu" class="text-sm text-beige-300 hover:text-olive-300 transition-colors duration-200">Menu</a></li>
+                        <li><a href="#reviews" class="text-sm text-beige-300 hover:text-olive-300 transition-colors duration-200">Reviews</a></li>
+                        <li><a href="#booking-form" class="text-sm text-beige-300 hover:text-olive-300 transition-colors duration-200">Book Table</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact Us -->
+                <div>
+                    <h4 class="text-xl font-semibold text-white mb-4">Contact Us</h4>
+                    <address class="not-italic">
+                        <p class="flex items-start mb-3 text-sm">
+                            <svg class="w-5 h-5 mr-3 mt-0.5 text-olive-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a7 7 0 00-7 7c0 5.25 7 11 7 11s7-5.75 7-11a7 7 0 00-7-7zm0 9a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+                            <span class="text-beige-300">123 Gourmet Street, Foodie City, FC 54321</span>
+                        </p>
+                        <p class="flex items-center mb-3 text-sm">
+                            <svg class="w-5 h-5 mr-3 text-olive-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                            <a href="tel:+1234567890" class="text-beige-300 hover:text-olive-300 transition-colors duration-200">(123) 456-7890</a>
+                        </p>
+                        <p class="flex items-center text-sm">
+                            <svg class="w-5 h-5 mr-3 text-olive-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                            <a href="mailto:info@delizia.com" class="text-beige-300 hover:text-olive-300 transition-colors duration-200">info@delizia.com</a>
+                        </p>
+                    </address>
+                </div>
+
+                <!-- Column 4: Follow Us -->
+                <div>
+                    <h4 class="text-xl font-semibold text-white mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" aria-label="Facebook" class="text-beige-300 hover:text-olive-300 transition-colors duration-200">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="text-beige-300 hover:text-olive-300 transition-colors duration-200">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4c2.21 0 4 1.791 4 4s-1.79 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Twitter" class="text-beige-300 hover:text-olive-300 transition-colors duration-200">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="mb-12">
+                 <div class="rounded-lg overflow-hidden shadow-xl border-2 border-olive-500/30">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.086438992681!2d144.95373531590425!3d-37.81720024208445!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1610000000000!5m2!1sen!2sau" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Delizia Restaurant Location"></iframe>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center text-beige-400 text-sm pt-8 border-t border-brown-700/50">
+                &copy; <span id="current-year">2024</span> Delizia. All Rights Reserved. Crafted with <span class="text-red-400">&hearts;</span> by Jules.
+            </div>
+        </div>
+        <script>
+            var yearSpan = document.getElementById('current-year');
+            if (yearSpan) {
+                yearSpan.textContent = new Date().getFullYear();
+            }
+        </script>
+    </footer>
+
+<script>
+    // Mobile Menu Toggle
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const header = document.querySelector('header');
+    // Select links in desktop menu and mobile menu that are for page navigation
+    const navLinksToCloseMenu = document.querySelectorAll('#desktop-menu a[href^="#"], #mobile-menu a[href^="#"]');
+
+    if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', String(!isHidden));
+            mobileMenu.setAttribute('aria-hidden', String(isHidden));
+        });
+    }
+
+    // Close mobile menu when a nav link is clicked
+    if (navLinksToCloseMenu && mobileMenu && mobileMenuButton) {
+        navLinksToCloseMenu.forEach(link => {
+            link.addEventListener('click', () => {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    mobileMenu.setAttribute('aria-hidden', 'true');
+                }
+            });
+        });
+    }
+
+    // Sticky header shadow on scroll
+    if (header) {
+        const checkHeaderShadow = () => {
+            if (window.scrollY > 10) {
+                if (!header.classList.contains('shadow-lg')) {
+                    header.classList.remove('shadow-md'); // remove default
+                    header.classList.add('shadow-lg');   // add scrolled shadow
+                }
+            } else {
+                if (!header.classList.contains('shadow-md')) {
+                    header.classList.add('shadow-md');    // add default
+                    header.classList.remove('shadow-lg'); // remove scrolled shadow
+                }
+            }
+        };
+        checkHeaderShadow(); // Check on load
+        window.addEventListener('scroll', checkHeaderShadow, { passive: true });
+    }
+
+    // Apply primary font via JS as a final override/ensure (already in <style>)
+    // document.body.style.fontFamily = "'Poppins', 'Inter', sans-serif";
+    // Commenting this out as it's better handled by CSS in <head> for FOUC prevention.
+
+    // Smooth scroll for anchor links is handled by CSS: html { scroll-behavior: smooth; }
+</script>
+</body>
+</html>
